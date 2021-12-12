@@ -51,6 +51,8 @@ struct FiguresListView: View {
 
 struct FiguresListView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView {
         FiguresListView()
+        }
     }
 }
