@@ -36,7 +36,16 @@ struct CircleView: View {
         return radius
     }
     
-    var area: Double {
+    // Attempts to calculate the area, if it can't... returns nil
+    var area: Double? {
+        
+        // Is the input actually a Double, or... is it Double? (might be nil)
+        guard let radius = radius
+        else {
+            // We didn't have a valid radius
+            // We can't calcualte the area...
+            return nil
+        }
         return Double.pi * radius * radius
     }
     
@@ -54,9 +63,6 @@ struct CircleView: View {
                 TextField("Radius",
                           text: $providedRadius,
                           prompt: Text("Numeric value greater than 0"))
-                
-                // Output: Radius
-                SliderValueView(value: radius)
                 
                 SectionLabelView(text: "Area", variable: "")
                 
