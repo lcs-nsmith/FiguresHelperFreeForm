@@ -67,6 +67,7 @@ struct CircleView: View {
                 // "One line if statement"
                 //                     CONDITION        TRUE          FALSE
                     .foregroundColor(radius == nil ? Color.red : Color.primary)
+                
                 SectionLabelView(text: "Area", variable: "")
                 
                 // Output: Area
